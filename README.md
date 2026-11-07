@@ -13,7 +13,7 @@ A small desktop widget for Windows that shows the battery level of your Bluetoot
 - Optionally shows paired-but-disconnected devices (faded, with their last known level)
 - Drag it anywhere; it remembers its position
 - Optional *Always on top* and *Start with Windows*
-- Updates every 60 seconds; no installs, no admin rights, nothing in the taskbar
+- Updates every 60 seconds; no extra software or admin rights needed, and nothing in the taskbar
 
 ## Requirements
 
