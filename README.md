@@ -2,7 +2,7 @@
 
 A small desktop widget for Windows that shows the battery level of your Bluetooth devices: keyboards, mice, headsets, speakers and so on, all in one place.
 
-> 🤖 **Made with Claude.** I built this widget together with [Claude](https://claude.ai) (Anthropic's AI assistant) in Claude Code: I described what I wanted, and Claude wrote and tested the code with me.
+Made with [Claude](https://claude.ai).
 
 ## Features
 
@@ -88,7 +88,3 @@ Windows already stores the battery level that it shows under *Settings › Bluet
 | `install.cmd` / `uninstall.cmd` | Double-click shortcuts for the installer |
 
 Settings (position, options and custom names) are saved in `%LOCALAPPDATA%\BTBatteryWidget\settings.json`.
-
----
-
-Made by [Hajar Razip](https://github.com/mshajarrazip) with [Claude](https://claude.ai).
