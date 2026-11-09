@@ -86,5 +86,6 @@ Windows already stores the battery level that it shows under *Settings › Bluet
 | `launch.vbs` | Starts the widget without a console window |
 | `install.ps1` | Installs, updates or uninstalls the widget |
 | `install.cmd` / `uninstall.cmd` | Double-click shortcuts for the installer |
+| `icon.ico` | The widget's icon, used by its shortcuts |
 
 Settings (position, options and custom names) are saved in `%LOCALAPPDATA%\BTBatteryWidget\settings.json`.

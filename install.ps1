@@ -26,7 +26,7 @@ $ErrorActionPreference = 'Stop'
 $AppName      = 'BTBatteryWidget'
 $InstallDir   = Join-Path $env:LOCALAPPDATA $AppName
 $RepoRaw      = 'https://raw.githubusercontent.com/mshajarrazip/Windows-Battery-Widget/main'
-$Files        = 'BluetoothBatteryWidget.ps1', 'launch.vbs'
+$Files        = 'BluetoothBatteryWidget.ps1', 'launch.vbs', 'icon.ico'
 $ShortcutName = 'Bluetooth Battery Widget.lnk'
 $StartMenuLnk = Join-Path ([Environment]::GetFolderPath('Programs')) $ShortcutName
 $StartupLnk   = Join-Path ([Environment]::GetFolderPath('Startup')) $ShortcutName
@@ -45,7 +45,7 @@ function New-Shortcut($path) {
     $lnk.TargetPath       = Join-Path $env:WINDIR 'System32\wscript.exe'
     $lnk.Arguments        = '"' + (Join-Path $InstallDir 'launch.vbs') + '"'
     $lnk.WorkingDirectory = $InstallDir
-    $lnk.IconLocation     = (Join-Path $env:WINDIR 'System32\bthprops.cpl') + ',0'
+    $lnk.IconLocation     = (Join-Path $InstallDir 'icon.ico') + ',0'
     $lnk.Description      = 'Battery levels of your Bluetooth devices'
     $lnk.Save()
 }

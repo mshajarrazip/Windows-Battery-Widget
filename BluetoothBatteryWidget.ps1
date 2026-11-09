@@ -380,13 +380,16 @@ function Set-Startup([bool]$enable) {
         Copy-Item -LiteralPath $PSCommandPath -Destination (Join-Path $DataDir 'BluetoothBatteryWidget.ps1') -Force
         $vbs = Join-Path $srcDir 'launch.vbs'
         if (Test-Path $vbs) { Copy-Item -LiteralPath $vbs -Destination (Join-Path $DataDir 'launch.vbs') -Force }
+        $ico = Join-Path $srcDir 'icon.ico'
+        if (Test-Path $ico) { Copy-Item -LiteralPath $ico -Destination (Join-Path $DataDir 'icon.ico') -Force }
     }
     $shell = New-Object -ComObject WScript.Shell
     $lnk = $shell.CreateShortcut($StartupLnk)
     $lnk.TargetPath = Join-Path $env:WINDIR 'System32\wscript.exe'
     $lnk.Arguments = '"' + (Join-Path $DataDir 'launch.vbs') + '"'
     $lnk.WorkingDirectory = $DataDir
-    $lnk.IconLocation = (Join-Path $env:WINDIR 'System32\bthprops.cpl') + ',0'
+    $icon = Join-Path $DataDir 'icon.ico'
+    if (Test-Path $icon) { $lnk.IconLocation = "$icon,0" }
     $lnk.Description = 'Battery levels of your Bluetooth devices'
     $lnk.Save()
 }
